@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Profile | J&J Computer Parts</title>
+<meta name="description" content="Sign in or create your J&J Computer Shop account to manage your cart and orders.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="glass.css">
+<link rel="stylesheet" href="stage.css">
+<link rel="stylesheet" href="type.css">
+</head>
+
+<body>
+<div class="announce"><b>Free shipping</b> on orders over ₱3,000 · 7-day returns<a href="shipping.html">Shipping info</a></div>
+<header class="top">
+  <div class="container nav-inner">
+    <div class="nav-left">
+      <a class="logo" href="index.html"><span class="mark">J&amp;J</span><span>J <span class="amp">&amp; J</span> Computer Shop</span></a>
+      <nav class="nav-links">
+        <a class="hide-m" href="index.html">Home</a>
+        <a class="hide-m" href="shop.html">Shop</a>
+        <a class="hide-m" href="about.html">About</a>
+        <a class="hide-m" href="shipping.html">Shipping</a>
+        <a class="hide-m" href="support.html">Support</a>
+      </nav>
+    </div>
+    <form class="nav-search" role="search" onsubmit="return navSearchSubmit(event)">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg>
+      <input id="navSearch" type="search" placeholder="Search parts, PCs, brands&hellip;" aria-label="Search products">
+    </form>
+    <a class="cart-link" href="profile.html" aria-label="Profile and cart"><svg class="ico-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"></path></svg><span class="cl-text" id="profileLabel">Profile</span><span class="cart-count" id="cartCount">0</span></a>
+  </div>
+</header>
+
+<main>
+  <!-- ===== SIGNED OUT: sign in / create account ===== -->
+  <section id="authView" class="container auth-wrap" hidden>
+    <div class="auth-aside">
+      <p class="kicker" style="color:#fff">Your profile</p>
+      <h2>Build faster with a J&amp;J account.</h2>
+      <p>Save your cart, check out quicker and keep track of your orders in one place.</p>
+      <ul class="auth-perks">
+        <li>Your cart is saved to your account</li>
+        <li>Free shipping on orders over &#8369;3,000</li>
+        <li>Order tracking and easy returns</li>
+      </ul>
+    </div>
+
+    <div class="auth-card">
+      <div class="auth-tabs" role="tablist">
+        <button type="button" role="tab" id="tabSignIn" class="on" aria-selected="true">Sign in</button>
+        <button type="button" role="tab" id="tabSignUp" aria-selected="false">Create account</button>
+      </div>
+
+      <form id="signInForm" novalidate>
+        <h1 class="auth-title">Welcome back</h1>
+        <p class="auth-sub">Sign in to view your profile and cart.</p>
+        <div class="field">
+          <label for="siEmail">Email</label>
+          <input type="email" id="siEmail" autocomplete="email" placeholder="you@example.com">
+        </div>
+        <div class="field">
+          <label for="siPass">Password</label>
+          <div class="pw-wrap">
+            <input type="password" id="siPass" autocomplete="current-password" placeholder="Your password">
+            <button type="button" class="pw-toggle" data-target="siPass">Show</button>
+          </div>
+        </div>
+        <p class="auth-error" id="siError" role="alert"></p>
+        <button type="submit" class="btn btn-block">Sign in</button>
+        <p class="auth-switch">New here? <a href="#" data-switch="up">Create an account</a></p>
+      </form>
+
+      <form id="signUpForm" novalidate hidden>
+        <h1 class="auth-title">Create your account</h1>
+        <p class="auth-sub">It takes less than a minute.</p>
+        <div class="field">
+          <label for="suName">Full name</label>
+          <input type="text" id="suName" autocomplete="name" placeholder="Juan Dela Cruz">
+        </div>
+        <div class="field">
+          <label for="suEmail">Email</label>
+          <input type="email" id="suEmail" autocomplete="email" placeholder="you@example.com">
+        </div>
+        <div class="field">
+          <label for="suPass">Password</label>
+          <div class="pw-wrap">
+            <input type="password" id="suPass" autocomplete="new-password" placeholder="At least 6 characters">
+            <button type="button" class="pw-toggle" data-target="suPass">Show</button>
+          </div>
+        </div>
+        <div class="field">
+          <label for="suPass2">Confirm password</label>
+          <input type="password" id="suPass2" autocomplete="new-password" placeholder="Repeat your password">
+        </div>
+        <p class="auth-error" id="suError" role="alert"></p>
+        <button type="submit" class="btn btn-block">Create account</button>
+        <p class="auth-switch">Already have an account? <a href="#" data-switch="in">Sign in</a></p>
+      </form>
+
+      
+    </div>
+  </section>
+
+  <!-- ===== SIGNED IN: profile dashboard ===== -->
+  <section id="profileView" class="container" hidden>
+    <div class="pf-head">
+      <div class="pf-avatar" id="pfAvatar">J</div>
+      <div class="pf-who">
+        <p class="kicker">Your profile</p>
+        <h1 id="pfName">Welcome</h1>
+        <p class="pf-email" id="pfEmail"></p>
+      </div>
+      <button type="button" class="btn btn-outline" id="signOutBtn">Sign out</button>
+    </div>
+
+    <div class="pf-tabs" role="tablist">
+      <button type="button" role="tab" data-pf="cart" class="on">My Cart</button>
+      <button type="button" role="tab" data-pf="orders">My Orders</button>
+      <button type="button" role="tab" data-pf="account">Account details</button>
+    </div>
+
+    <div id="pf-cart" class="pf-panel">
+      <div class="cartwrap">
+        <div id="cartRoot"></div>
+        <aside id="summaryBox"></aside>
+      </div>
+    </div>
+
+    <div id="pf-orders" class="pf-panel" hidden><div id="ordersRoot"></div></div>
+
+    <div id="pf-account" class="pf-panel" hidden>
+      <div class="info-card pf-card">
+        <h3>Account details</h3>
+        <ul class="contact-details">
+          <li><span>Name</span><b id="acName"></b></li>
+          <li><span>Email</span><b id="acEmail"></b></li>
+          <li><span>Member since</span><b id="acSince"></b></li>
+        </ul>
+        <p class="form-note">Need help with an order? <a href="support.html" class="see-all">Visit support</a> or <a href="shipping.html" class="see-all">track a shipment</a>.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="f-grid">
+      <div>
+        <a class="logo" href="index.html">J &amp; <span class="amp">J Computer Shop</span></a>
+        <p class="f-about">Quality PC parts and custom builds at fair prices, shipped across the Philippines.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <a href="shop.html">Computer Items</a>
+      </div>
+      <div>
+        <h4>Customer care</h4>
+        <a href="profile.html">Profile &amp; cart</a>
+        <a href="shipping.html">Shipping &amp; returns</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="about.html">About</a>
+        <a href="journal.html">Journal</a>
+        <a href="support.html">Support</a>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>© 2026 J &amp; J Computer Shop</span>
+      <span>Built in the Philippines · Ships nationwide</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="config.js"></script>
+<script src="ItemList.js"></script>
+<script src="db.js"></script>
+<script src="ui3d.js" defer></script>
+<script src="app.js"></script>
+<script src="auth.js"></script>
+
+</body>
+</html>

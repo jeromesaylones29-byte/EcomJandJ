@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shipping &amp; Returns | J&J Computer Parts</title>
+<meta name="description" content="Shipping, delivery and returns policy for J&J Computer Parts.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="glass.css">
+<link rel="stylesheet" href="stage.css">
+<link rel="stylesheet" href="type.css">
+</head>
+
+<body>
+<div class="announce"><b>Free shipping</b> on orders over ₱3,000 · 7-day returns<a href="shipping.html">Shipping info</a></div>
+<header class="top">
+  <div class="container nav-inner">
+    <div class="nav-left">
+      <a class="logo" href="index.html"><span class="mark">J&amp;J</span><span>J <span class="amp">&amp; J</span> Computer Shop</span></a>
+      <nav class="nav-links">
+        <a class="hide-m" href="index.html">Home</a>
+        <a class="hide-m" href="shop.html">Shop</a>
+        <a class="hide-m" href="about.html">About</a>
+        <a class="hide-m" href="shipping.html">Shipping</a>
+        <a class="hide-m" href="support.html">Support</a>
+      </nav>
+    </div>
+    <form class="nav-search" role="search" onsubmit="return navSearchSubmit(event)">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg>
+      <input id="navSearch" type="search" placeholder="Search parts, PCs, brands&hellip;" aria-label="Search products">
+    </form>
+    <a class="cart-link" href="profile.html" aria-label="Profile and cart"><svg class="ico-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"></path></svg><span class="cl-text" id="profileLabel">Profile</span><span class="cart-count" id="cartCount">0</span></a>
+  </div>
+</header>
+
+<main class="ship-main">
+  <section class="container pagehead">
+    <p class="kicker">Customer care</p>
+    <h1>Shipping &amp; Returns</h1>
+    <p class="lede" style="max-width:60ch">Check your delivery cost, track your parcel and start a return, all in one place.</p>
+    <div class="quick-actions">
+      <a href="#calculator"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 12h2M12 12h2M16 12h0M8 16h2M12 16h2"/></svg>Estimate shipping</a>
+      <a href="#track"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Track my order</a>
+      <a href="#returns"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 3-6.2"/><path d="M4 4v4h4"/></svg>Start a return</a>
+      <a href="contact.html"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z"/></svg>Contact support</a>
+    </div>
+  </section>
+
+  <!-- Free shipping progress (reads the live cart) -->
+  <section class="container" style="padding-top:10px">
+    <div class="ship-banner" id="shipBanner">
+      <div>
+        <h3 id="shipBannerTitle">Free shipping on orders over ₱3,000</h3>
+        <p id="shipBannerText">Add items to your cart to see how close you are.</p>
+        <div class="progress" aria-hidden="true"><span id="shipBar"></span></div>
+      </div>
+      <a class="btn" id="shipBannerBtn" href="shop.html">Shop parts</a>
+    </div>
+  </section>
+
+  <!-- Store tools -->
+  <section class="container">
+    <div class="tool-grid">
+      <div class="info-card tool-card" id="calculator">
+        <h3>Shipping calculator</h3>
+        <p>Get your delivery fee and estimated arrival date.</p>
+        <form id="shipCalc" novalidate>
+          <div class="field">
+            <label for="calcRegion">Delivery area</label>
+            <select id="calcRegion">
+              <option value="metro">Metro Manila</option>
+              <option value="luzon">Rest of Luzon</option>
+              <option value="vismin">Visayas &amp; Mindanao</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="calcSubtotal">Order subtotal (₱)</label>
+            <input type="number" id="calcSubtotal" min="0" step="1" placeholder="e.g. 2500">
+          </div>
+          <div class="field">
+            <label class="check"><input type="checkbox" id="calcBulky"> My order includes a case or monitor</label>
+          </div>
+          <button type="submit" class="btn btn-block">Calculate shipping</button>
+        </form>
+        <div class="tool-result" id="calcResult" aria-live="polite"></div>
+      </div>
+
+      <div class="info-card tool-card" id="track">
+        <h3>Track your order</h3>
+        <p>Enter the order number from your confirmation email.</p>
+        <form id="trackForm" novalidate>
+          <div class="field">
+            <label for="trackNo">Order number</label>
+            <input type="text" id="trackNo" placeholder="e.g. JJ-104582" autocomplete="off">
+          </div>
+          <div class="field">
+            <label for="trackEmail">Email used at checkout</label>
+            <input type="email" id="trackEmail" placeholder="you@example.com">
+          </div>
+          <button type="submit" class="btn btn-block">Track order</button>
+        </form>
+        <div class="tool-result" id="trackResult" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================ SHIPPING ============================ -->
+  <section class="container">
+    <div class="sec-head"><h2>Shipping</h2></div>
+
+    <div class="info-card" style="margin-bottom:18px">
+      <h3>Delivery rates &amp; estimated arrival</h3>
+      <p style="margin-bottom:6px">Orders are dispatched from our fulfillment center. Delivery time is counted from the moment your order is packed and handed to the courier.</p>
+      <table class="rate-table">
+        <thead>
+          <tr><th>Destination</th><th>Method</th><th>Cost</th><th>Estimated delivery</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Metro Manila</td><td>Standard courier</td><td>₱150 (free over ₱3,000)</td><td>1–2 business days</td></tr>
+          <tr><td>Rest of Luzon</td><td>Standard courier</td><td>₱150 (free over ₱3,000)</td><td>2–4 business days</td></tr>
+          <tr><td>Visayas &amp; Mindanao</td><td>Standard courier</td><td>₱150 (free over ₱3,000)</td><td>3–6 business days</td></tr>
+          <tr><td>Bulky items (cases, monitors)</td><td>Freight / oversized</td><td>Quoted at checkout</td><td>+1–2 business days</td></tr>
+        </tbody>
+      </table>
+      <p style="margin-top:12px;font-size:13px">Free standard shipping applies automatically to all orders with a subtotal of ₱3,000 or more. A flat fee of ₱150 applies to smaller orders.</p>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>Order processing</h3>
+        <p>We verify and pack every order by hand. Please allow <strong>1–2 business days</strong> for processing before dispatch. Orders placed on weekends or public holidays are processed on the next business day.</p>
+      </div>
+      <div class="info-card">
+        <h3>Order cut-off</h3>
+        <p>Orders placed before <strong>2:00 PM</strong> on a business day are usually packed the same day. Anything after that roll-over is packed the following business day.</p>
+      </div>
+      <div class="info-card">
+        <h3>Tracking your order</h3>
+        <p>Once your parcel is handed to the courier you will receive a <strong>tracking number by email</strong>. You can use it on the courier's site to follow your delivery in real time.</p>
+      </div>
+      <div class="info-card">
+        <h3>Delivery problems</h3>
+        <ul>
+          <li>Late parcel — wait 1 business day past the estimate, then message us with your order number</li>
+          <li>Marked delivered but missing — check with neighbors and the front desk first, then contact us</li>
+          <li>Arrived damaged — keep all packaging and take photos before contacting us</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ RETURNS ============================ -->
+  <section class="container" id="returns">
+    <div class="sec-head"><h2>Returns &amp; Exchanges</h2></div>
+
+    <div class="info-card tool-card" id="rmaCard" style="margin-bottom:18px">
+      <h3>Request a return</h3>
+      <p>Tell us what happened and we will issue your RMA number.</p>
+      <form id="rmaForm" novalidate>
+        <div class="info-grid" style="gap:0 18px">
+          <div class="field">
+            <label for="rmaOrder">Order number</label>
+            <input type="text" id="rmaOrder" placeholder="e.g. JJ-104582">
+          </div>
+          <div class="field">
+            <label for="rmaReason">Reason for return</label>
+            <select id="rmaReason">
+              <option value="">Select a reason</option>
+              <option>Item arrived damaged</option>
+              <option>Item is faulty or dead on arrival</option>
+              <option>Wrong or missing item</option>
+              <option>Changed my mind</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn">Request RMA</button>
+      </form>
+      <div class="tool-result" id="rmaResult" aria-live="polite"></div>
+    </div>
+
+    <div class="info-card" style="margin-bottom:18px">
+      <h3>Return window &amp; eligibility</h3>
+      <p>You may request a return within <strong>7 days</strong> of the delivery date. To qualify for a refund or exchange the item must meet all of the following:</p>
+      <ul>
+        <li>Unused and in the same condition you received it</li>
+        <li>Complete with all original accessories, cables, manuals and mounting hardware</li>
+        <li>Returned in its original undamaged packaging with any seals intact</li>
+        <li>Accompanied by proof of purchase (order number or receipt)</li>
+      </ul>
+    </div>
+
+    <div class="info-grid" style="margin-bottom:18px">
+      <div class="info-card">
+        <h3>Faulty, damaged or dead-on-arrival</h3>
+        <p>If a part arrives damaged, is missing pieces, or fails within the return window, contact us immediately with photos. We will arrange a <strong>free replacement or a full refund</strong>, and we cover the return shipping cost.</p>
+      </div>
+      <div class="info-card">
+        <h3>Change of mind</h3>
+        <p>If you simply changed your mind, you may return an unopened, unused item within 7 days. In this case a <strong>restocking / return-shipping fee may apply</strong>, and the refund covers the item value only — not the original delivery fee.</p>
+      </div>
+      <div class="info-card">
+        <h3>Not eligible for return</h3>
+        <ul>
+          <li>Software, digital licences and downloadable keys</li>
+          <li>Items with broken security seals or removed serial labels</li>
+          <li>Custom-built or configured systems</li>
+          <li>Damage caused by misuse, liquid, overclocking or physical impact</li>
+          <li>Consumables such as thermal paste once opened</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h3>Warranty vs. returns</h3>
+        <p>The 7-day window covers returns and exchanges. Faults <em>after</em> that window fall under each product's manufacturer warranty (for example 6 or 12 months) — we can help you file a warranty claim with the brand.</p>
+      </div>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>How to start a return</h3>
+        <div class="policy-step"><span class="num">1</span><p><strong>Request an RMA.</strong> Email us your order number and the reason for the return. We reply with a Return Merchandise Authorization (RMA) number.</p></div>
+        <div class="policy-step"><span class="num">2</span><p><strong>Pack it up.</strong> Repack the item with all accessories and original packaging, and write the RMA number on the outside of the box.</p></div>
+        <div class="policy-step"><span class="num">3</span><p><strong>Ship it back.</strong> We send you the return address and instructions. Drop the parcel at the courier and keep the tracking receipt.</p></div>
+        <div class="policy-step"><span class="num">4</span><p><strong>Inspection.</strong> Once received, our team inspects the item against our return conditions (usually within 1–2 business days).</p></div>
+      </div>
+
+      <div class="info-card">
+        <h3>Refunds &amp; timelines</h3>
+        <div class="policy-step"><span class="num">₱</span><p>Approved refunds are issued within <strong>3–5 business days</strong> after inspection, back to the <strong>original payment method</strong> (card, e-wallet or bank transfer).</p></div>
+        <div class="policy-step"><span class="num">↺</span><p><strong>Exchanges:</strong> if a replacement is in stock we ship it as soon as the returned item is checked in. If it is out of stock, you can pick a different item or take a refund.</p></div>
+        <div class="policy-step"><span class="num">i</span><p><strong>Bank processing time:</strong> the refund leaves our side in 3–5 business days, but your bank or card issuer may take a few more days to post it. Contact us if it has not appeared after 10 business days.</p></div>
+        <div class="policy-step"><span class="num">!</span><p><strong>Return shipping:</strong> customer-paid for change-of-mind returns; store-paid for faulty or incorrect items.</p></div>
+      </div>
+    </div>
+
+    <div class="info-card" style="margin-top:18px">
+      <h3>Accepted payment methods</h3>
+      <div class="pay-row"><span>GCash</span><span>Bank transfer</span><span>Credit / debit card</span></div>
+    </div>
+
+    <div class="return-actions">
+      <a class="btn" href="contact.html">Contact support</a>
+      <a class="btn btn-outline" href="shop.html">Continue shopping</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="f-grid">
+      <div>
+        <a class="logo" href="index.html"><span class="mark">J&amp;J</span><span>J <span class="amp">&amp; J</span> Computer Shop</span></a>
+        <p class="f-about">Quality PC parts and custom builds at fair prices, shipped across the Philippines.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <a href="shop.html">Computer Items</a>
+      </div>
+      <div>
+        <h4>Customer care</h4>
+        <a href="profile.html">Profile &amp; cart</a>
+        <a href="shipping.html">Shipping &amp; returns</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="about.html">About</a>
+        <a href="journal.html">Journal</a>
+        <a href="support.html">Support</a>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>© 2026 J &amp; J Computer Shop</span>
+      <span>Built in the Philippines · Ships nationwide</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="config.js"></script>
+<script src="ItemList.js"></script>
+<script src="db.js"></script>
+<script src="ui3d.js" defer></script>
+<script src="app.js"></script>
+<script src="auth.js"></script>
+</body>
+</html>

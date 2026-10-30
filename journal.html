@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Journal | J&J Computer Parts</title>
+<meta name="description" content="Build guides, upgrade tips and tech notes from the J&J Computer Parts team.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="glass.css">
+<link rel="stylesheet" href="stage.css">
+<link rel="stylesheet" href="type.css">
+</head>
+
+<body>
+<div class="announce"><b>Free shipping</b> on orders over ₱3,000 · 7-day returns<a href="shipping.html">Shipping info</a></div>
+<header class="top">
+  <div class="container nav-inner">
+    <div class="nav-left">
+      <a class="logo" href="index.html"><span class="mark">J&amp;J</span><span>J <span class="amp">&amp; J</span> Computer Shop</span></a>
+      <nav class="nav-links">
+        <a class="hide-m" href="index.html">Home</a>
+        <a class="hide-m" href="shop.html">Shop</a>
+        <a class="hide-m" href="about.html">About</a>
+        <a class="hide-m" href="shipping.html">Shipping</a>
+        <a class="hide-m" href="support.html">Support</a>
+      </nav>
+    </div>
+    <form class="nav-search" role="search" onsubmit="return navSearchSubmit(event)">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg>
+      <input id="navSearch" type="search" placeholder="Search parts, PCs, brands&hellip;" aria-label="Search products">
+    </form>
+    <a class="cart-link" href="profile.html" aria-label="Profile and cart"><svg class="ico-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"></path></svg><span class="cl-text" id="profileLabel">Profile</span><span class="cart-count" id="cartCount">0</span></a>
+  </div>
+</header>
+
+<main>
+  <section class="container j-hero">
+    <div>
+      <p class="kicker">Company &middot; Journal</p>
+      <h1>The J&amp;J Journal</h1>
+      <p class="lede">Build guides, buying advice and tech notes from the people who build PCs for a living.</p>
+    </div>
+    <label class="j-search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg>
+      <input id="jSearch" type="search" placeholder="Search articles" aria-label="Search articles">
+    </label>
+  </section>
+
+  <section class="container">
+    <article class="j-featured" id="jFeatured"></article>
+  </section>
+
+  <section class="container j-list">
+    <div class="j-list-head">
+      <h2>Latest articles</h2>
+      <div class="filters" id="jFilters" aria-label="Filter by topic"></div>
+    </div>
+    <div class="jgrid" id="jGrid"></div>
+  </section>
+
+  <section class="container">
+    <form class="j-news" id="jNews" novalidate>
+      <div>
+        <h3>Get new guides in your inbox</h3>
+        <p>One short email when we publish. No spam, unsubscribe any time.</p>
+      </div>
+      <div class="j-news-form">
+        <input type="email" id="jNewsEmail" placeholder="you@example.com" aria-label="Email address">
+        <button type="submit" class="btn">Subscribe</button>
+      </div>
+      <p class="form-note" id="jNewsNote"></p>
+    </form>
+  </section>
+
+  <dialog id="jDialog" class="j-dialog" aria-label="Article">
+    <button type="button" class="jd-close" id="jdClose" aria-label="Close article">&times;</button>
+    <div id="jdContent"></div>
+  </dialog>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="f-grid">
+      <div>
+        <a class="logo" href="index.html">J &amp; <span class="amp">J Computer Shop</span></a>
+        <p class="f-about">Quality PC parts and custom builds at fair prices, shipped across the Philippines.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <a href="shop.html">Computer Items</a>
+      </div>
+      <div>
+        <h4>Customer care</h4>
+        <a href="profile.html">Profile &amp; cart</a>
+        <a href="shipping.html">Shipping &amp; returns</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="about.html">About</a>
+        <a href="journal.html">Journal</a>
+        <a href="support.html">Support</a>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>© 2026 J &amp; J Computer Shop</span>
+      <span>Built in the Philippines · Ships nationwide</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="config.js"></script>
+<script src="ItemList.js"></script>
+<script src="db.js"></script>
+<script src="ui3d.js" defer></script>
+<script src="app.js"></script>
+<script src="auth.js"></script>
+<script src="journal.js"></script>
+</body>
+</html>

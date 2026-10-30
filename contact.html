@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact | J&J Computer Parts</title>
+<meta name="description" content="Contact J&J Computer Parts with questions about orders, parts, or builds.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="glass.css">
+<link rel="stylesheet" href="stage.css">
+<link rel="stylesheet" href="type.css">
+</head>
+
+<body>
+<div class="announce"><b>Free shipping</b> on orders over ₱3,000 · 7-day returns<a href="shipping.html">Shipping info</a></div>
+<header class="top">
+  <div class="container nav-inner">
+    <div class="nav-left">
+      <a class="logo" href="index.html"><span class="mark">J&amp;J</span><span>J <span class="amp">&amp; J</span> Computer Shop</span></a>
+      <nav class="nav-links">
+        <a class="hide-m" href="index.html">Home</a>
+        <a class="hide-m" href="shop.html">Shop</a>
+        <a class="hide-m" href="about.html">About</a>
+        <a class="hide-m" href="shipping.html">Shipping</a>
+        <a class="hide-m" href="support.html">Support</a>
+      </nav>
+    </div>
+    <form class="nav-search" role="search" onsubmit="return navSearchSubmit(event)">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg>
+      <input id="navSearch" type="search" placeholder="Search parts, PCs, brands&hellip;" aria-label="Search products">
+    </form>
+    <a class="cart-link" href="profile.html" aria-label="Profile and cart"><svg class="ico-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"></path></svg><span class="cl-text" id="profileLabel">Profile</span><span class="cart-count" id="cartCount">0</span></a>
+  </div>
+</header>
+
+<main>
+  <section class="container pagehead">
+    <p class="kicker">Customer care</p>
+    <h1>Contact</h1>
+    <p class="lede" style="max-width:56ch">Questions about an order, a part, or your build? Send us a message and we will get back to you within one business day.</p>
+  </section>
+
+  <section class="container split" style="padding-top:8px">
+    <!-- Contact details -->
+    <div>
+      <div class="info-card">
+        <h3>Get in touch</h3>
+        <ul class="contact-details">
+          <li><span>Email</span><a href="mailto:support@jjcomputer.shop">support@jjcomputer.shop</a></li>
+          <li><span>Phone</span>+63 912 345 6789</li>
+          <li><span>Store hours</span>Mon – Sat, 9:00 AM – 6:00 PM</li>
+          <li><span>Location</span>Philippines — ships nationwide</li>
+        </ul>
+        
+      </div>
+    </div>
+
+    <!-- Contact form: saves to the Supabase "messages" table (handled by the script at the bottom) -->
+    <div>
+      <form id="contactForm" class="info-card" novalidate>
+        <h3 style="margin-bottom:14px">Send us a message</h3>
+        <div class="field">
+          <label for="fName">Name</label>
+          <input type="text" id="fName" placeholder="Your name" maxlength="100" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="fEmail">Email</label>
+          <input type="email" id="fEmail" placeholder="you@example.com" maxlength="200" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="fMsg">Message</label>
+          <textarea id="fMsg" placeholder="Tell us what you need…" maxlength="5000" required></textarea>
+        </div>
+        <input type="text" id="fWebsite" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0">
+        <button type="submit" class="btn" id="fSend">Send message</button>
+        <p class="form-note" id="formNote" role="status" aria-live="polite">We usually reply within one business day.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="f-grid">
+      <div>
+        <a class="logo" href="index.html">J &amp; <span class="amp">J Computer Shop</span></a>
+        <p class="f-about">Quality PC parts and custom builds at fair prices, shipped across the Philippines.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <a href="shop.html">Computer Items</a>
+      </div>
+      <div>
+        <h4>Customer care</h4>
+        <a href="profile.html">Profile &amp; cart</a>
+        <a href="shipping.html">Shipping &amp; returns</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="about.html">About</a>
+        <a href="journal.html">Journal</a>
+        <a href="support.html">Support</a>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>© 2026 J &amp; J Computer Shop</span>
+      <span>Built in the Philippines · Ships nationwide</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="config.js"></script>
+<script src="ItemList.js"></script>
+<script src="db.js"></script>
+<script src="ui3d.js" defer></script>
+<script src="app.js"></script>
+<script src="auth.js"></script>
+
+<script>
+// Contact form -> Supabase "messages" table (columns: name, email, message, user_id, created_at)
+(function () {
+  var form = document.getElementById("contactForm");
+  var note = document.getElementById("formNote");
+  var btn  = document.getElementById("fSend");
+  var DEFAULT_NOTE = note.textContent;
+
+  function say(text, kind) {
+    note.textContent = text;
+    note.style.color = kind === "ok" ? "#FFFFFF" : kind === "err" ? "#e5484d" : "";
+  }
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    var name  = document.getElementById("fName").value.trim();
+    var email = document.getElementById("fEmail").value.trim();
+    var msg   = document.getElementById("fMsg").value.trim();
+
+    // spam trap: real users never fill this hidden field
+    if (document.getElementById("fWebsite").value) return;
+
+    if (!name || !email || !msg) return say("Please fill in your name, email and message.", "err");
+    if (!/^\S+@\S+\.\S+$/.test(email)) return say("Please enter a valid email address.", "err");
+
+    var sb = window.JJ && window.JJ.sb;
+    if (!sb) return say("Messaging is temporarily unavailable. Please email support@jjcomputer.shop instead.", "err");
+
+    btn.disabled = true; btn.textContent = "Sending…"; say("Sending your message…");
+
+    try {
+      // attach the account id when the visitor is signed in (guests send null)
+      var s = await sb.auth.getSession();
+      var uid = s && s.data && s.data.session ? s.data.session.user.id : null;
+
+      var r = await sb.from("messages").insert({ name: name, email: email, message: msg, user_id: uid });
+      if (r.error) {
+        console.error("Supabase messages insert failed:", r.error);
+        say("Sorry, we could not send your message. Please try again or email support@jjcomputer.shop.", "err");
+      } else {
+        form.reset();
+        say("Thank you, " + name + "! Your message was sent. We reply within one business day.", "ok");
+      }
+    } catch (err) {
+      console.error("Contact form error:", err);
+      say("Network problem. Please check your connection and try again.", "err");
+    } finally {
+      btn.disabled = false; btn.textContent = "Send message";
+    }
+  });
+
+  // clear the status once the visitor starts typing again
+  form.addEventListener("input", function () { if (note.style.color) say(DEFAULT_NOTE); });
+})();
+</script>
+</body>
+</html>

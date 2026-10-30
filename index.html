@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>J&J Computer Parts</title>
+<meta name="description" content="Build your dream PC on a budget. Shop affordable computer parts, GPUs, CPUs, and daily deals with fast shipping.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="glass.css">
+<link rel="stylesheet" href="stage.css">
+<link rel="stylesheet" href="type.css">
+</head>
+
+<body>
+<div class="announce"><b>Free shipping</b> on orders over ₱3,000 · 7-day returns<a href="shipping.html">Shipping info</a></div>
+<header class="top">
+  <div class="container nav-inner">
+    <div class="nav-left">
+      <a class="logo" href="index.html"><span class="mark">J&amp;J</span><span>J <span class="amp">&amp; J</span> Computer Shop</span></a>
+      <nav class="nav-links">
+        <a class="hide-m" href="index.html">Home</a>
+        <a class="hide-m" href="shop.html">Shop</a>
+        <a class="hide-m" href="about.html">About</a>
+        <a class="hide-m" href="shipping.html">Shipping</a>
+        <a class="hide-m" href="support.html">Support</a>
+      </nav>
+    </div>
+    <form class="nav-search" role="search" onsubmit="return navSearchSubmit(event)">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg>
+      <input id="navSearch" type="search" placeholder="Search parts, PCs, brands&hellip;" aria-label="Search products">
+    </form>
+    <a class="cart-link" href="profile.html" aria-label="Profile and cart"><svg class="ico-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"></path></svg><span class="cl-text" id="profileLabel">Profile</span><span class="cart-count" id="cartCount">0</span></a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="kicker">Computer Parts</p>
+        <h1>Heavy-duty performance without the heavy price tag</h1>
+        <p class="lede">At J&J, we supply quality computer parts for every build. Enjoy fair pricing, dependable stock, and free shipping on all orders over ₱3,000.</p>
+        <div class="hero-ctas">
+          <a class="btn" href="shop.html">Shop</a>
+        </div>
+        <div class="hero-trust">
+          <span>Free shipping over ₱3,000</span>
+          <span>7-day returns</span>
+          <span>Hand-checked stock</span>
+        </div>
+      </div> 
+      <div class="hero-media">
+        <div class="stage3d" id="stage3d" aria-label="Pre-built PCs"></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="sec-head"><h2>Shop by category</h2></div>
+      <div class="cat-tiles">
+        <a class="cat-tile" href="shop.html?cat=CPU">
+          <img src="assets/Front img/CPU.jpg" alt="CPU">
+          <div class="ov"><h3>CPU</h3><span>AMD &amp; Intel</span></div>
+        </a>
+        <a class="cat-tile" href="shop.html?cat=Motherboard">
+          <img src="assets/Front img/Motherboard.jpeg" alt="Motherboard">
+          <div class="ov"><h3>Motherboard</h3><span>ASUS, MSI, Gigabyte &amp; more</span></div>
+        </a>
+        <a class="cat-tile" href="shop.html?cat=RAM">
+          <img src="assets/Front img/RAM.jpeg" alt="RAM">
+          <div class="ov"><h3>RAM</h3><span>Corsair, Kingstone, TEAMGROUP &amp; more</span></div>
+        </a>
+        <a class="cat-tile" href="shop.html?cat=Storage">
+          <img src="assets/Front img/Storage.jpg" alt="Storage">
+          <div class="ov"><h3>Storage</h3><span>Seagate, Samsung, Toshiba &amp; more</span></div>
+        </a>
+        <a class="cat-tile" href="shop.html?cat=GPU">
+          <img src="assets/Front img/GPU.JPEG" alt="GPU">
+          <div class="ov"><h3>GPU</h3><span>Nvidia, AMD, MSI , ASUS &amp; more</span></div>
+        </a>
+        <a class="cat-tile" href="shop.html?cat=PSU">
+          <img src="assets/Front img/PSU.jpg" alt="PSU">
+          <div class="ov"><h3>PSU</h3><span>Seasonic, Corsair, MSI &amp; more</span></div>
+        </a>
+        <a class="cat-tile" href="shop.html?cat=CoolingSystem">
+          <img src="assets/Front img/Cooling System.jpeg" alt="Cooling System">
+          <div class="ov"><h3>Cooling System</h3><span>Corsair, Arctic, Noctua &amp; more</span></div>
+        </a>
+        <a class="cat-tile" href="shop.html?cat=Case">
+          <img src="assets/Front img/Computer Case.jpg" alt="ComputerCase">
+          <div class="ov"><h3>Case</h3><span>Lian Li, Corsair, Phanteks &amp; more</span></div>
+        </a>
+        <a class="cat-tile" href="shop.html?cat=Peripheral">
+          <img src="assets/Front img/Peripheral.jpeg" alt="Peripheral">
+          <div class="ov"><h3>Peripheral</h3><span>Monitor, Keyboard, Mice &amp; more</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="sec-head">
+        <h2>Flash Deals & Discounts</h2>
+        <a class="see-all" href="shop.html">View all →</a>
+      </div>
+      <div class="pgrid" id="flash-deals"></div>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="usps">
+      <div class="usp"><div class="t">Free shipping</div><p>On all orders over ₱3,000 </p></div>
+      <div class="usp"><div class="t">7-day returns</div><p>No questions asked</p></div>
+      <div class="usp"><div class="t">Real stock</div><p>Hand-picked components</p></div>
+      <div class="usp"><div class="t">Fast dispatch</div><p>Fast Shipping Around Philippines</p></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="f-grid">
+      <div>
+        <a class="logo" href="index.html">J &amp; <span class="amp">J Computer Shop</span></a>
+        <p class="f-about">Quality PC parts and custom builds at fair prices, shipped across the Philippines.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <a href="shop.html">Computer Items</a>
+      </div>
+      <div>
+        <h4>Customer care</h4>
+        <a href="profile.html">Profile &amp; cart</a>
+        <a href="shipping.html">Shipping &amp; returns</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="about.html">About</a>
+        <a href="journal.html">Journal</a>
+        <a href="support.html">Support</a>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>© 2026 J &amp; J Computer Shop</span>
+      <span>Built in the Philippines · Ships nationwide</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="config.js"></script>
+<script src="ItemList.js"></script>
+<script src="db.js"></script>
+<script src="ui3d.js" defer></script>
+<script src="hero3d.js" defer></script>
+<script src="app.js"></script>
+<script src="auth.js"></script>
+
+</body>
+</html>

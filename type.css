@@ -1,0 +1,53 @@
+/* ============================================================
+   J&J TYPOGRAPHY: Plus Jakarta Sans (headings) + Inter (text)
+   ============================================================ */
+:root{--font-head:"Plus Jakarta Sans","Inter",system-ui,-apple-system,"Segoe UI",sans-serif;--font-body:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+html{font-size:16px;-webkit-text-size-adjust:100%}
+body{font-family:var(--font-body)!important;font-size:1rem;line-height:1.65;letter-spacing:0!important;font-weight:400;font-optical-sizing:auto;text-rendering:optimizeLegibility}
+h1,h2,h3,h4,.logo,.price .now,.pprice .now,.summary .total,.btn,.pill,.nav-links a,.cart-link,.kicker,.pcard .name,.product-title{font-family:var(--font-head)}
+h1,h2,h3,h4{font-weight:800;letter-spacing:-.022em;line-height:1.12;text-wrap:balance}
+p,li{text-wrap:pretty}
+.hero h1{font-size:clamp(2.5rem,4.6vw,4rem);line-height:1.06;letter-spacing:-.03em}
+.pagehead h1{font-size:clamp(2rem,3.4vw,2.75rem)}
+.sec-head h2{font-size:clamp(1.5rem,2.3vw,2rem)}
+h3{font-size:1.25rem}h4{font-size:1rem}
+.lede,.hero .lede{font-size:clamp(1.0625rem,1.25vw,1.1875rem);line-height:1.7;max-width:56ch}
+.kicker{font-size:.75rem;font-weight:700;letter-spacing:.14em}
+.logo{font-size:1.0625rem;font-weight:800;letter-spacing:-.02em}
+.nav-links a{font-size:.9375rem;font-weight:600}
+.nav-search input,.field input,.field select,.field textarea,.pw-wrap input{font-family:var(--font-body);font-size:.9375rem}
+.btn,.btn-view,.btn-cart,.pcard .add{font-size:.9375rem;font-weight:700;letter-spacing:.005em}
+.pill{font-size:.875rem;font-weight:600}
+.announce{font-size:.8125rem}
+.pcard .brand,.product-card .subtitle{font-size:.6875rem;font-weight:700;letter-spacing:.12em}
+.pcard .name,.product-title{font-size:1rem;font-weight:700;line-height:1.4;letter-spacing:-.01em}
+.price .now,.product-card>.price{font-size:1.3125rem;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.price .was{font-size:.875rem;font-variant-numeric:tabular-nums}
+.pname{font-size:clamp(1.625rem,2.6vw,2.125rem);line-height:1.15}
+.pprice .now{font-size:clamp(1.875rem,3vw,2.375rem);font-weight:800;letter-spacing:-.03em}
+.pdesc,.pspecs li{font-size:.9688rem;line-height:1.7}
+.result-meta,.free-note,.summary .row,.cline .pr,.contact-details li,.order-card li,.auth-sub,.field label{font-size:.875rem}
+.field label{font-weight:600;letter-spacing:.01em}
+.summary h3{font-size:1.125rem!important}.summary .total{font-size:1.3125rem}
+.auth-title{font-size:1.75rem}.auth-aside h2{font-size:clamp(1.75rem,2.6vw,2.25rem);letter-spacing:-.025em}
+.cat-tile .ov h3{font-size:1.1875rem}.cat-tile .ov span{font-size:.8125rem;line-height:1.4}
+footer h4{font-size:.8125rem;letter-spacing:.1em;text-transform:uppercase}
+footer a:not(.logo),.f-about{font-size:.9375rem}.f-bottom{font-size:.8125rem}
+.toast{font-size:.9375rem}
+table,td,th{font-variant-numeric:tabular-nums}
+@media(max-width:760px){body{font-size:.9688rem}.hero .lede{font-size:1rem}.pcard .name,.product-title{font-size:.9375rem}.price .now{font-size:1.125rem}}
+
+/* ---- compact shop list ---- */
+#grid{grid-template-columns:repeat(auto-fill,minmax(184px,1fr))!important;gap:14px!important}
+#grid .pcard{border-radius:16px!important;padding:7px!important}
+#grid .pcard .media{border-radius:12px!important}
+#grid .pcard .media img{padding:8px}
+#grid .pcard:hover .media img{transform:translateZ(80px) scale(1.08) rotate(-1deg)}
+#grid .pcard .body{padding:10px 6px 6px;gap:3px}
+#grid .pcard .brand{font-size:.625rem}
+#grid .pcard .name{font-size:.8125rem;line-height:1.35;font-weight:650}
+#grid .price{padding-top:3px;gap:6px}
+#grid .price .now{font-size:1rem}#grid .price .was{font-size:.75rem}
+#grid .pcard .add{margin-top:6px;padding:7px;font-size:.8125rem;border-radius:10px}
+#grid .discount{top:8px;left:8px;padding:3px 8px;font-size:.6875rem}
+@media(max-width:760px){#grid{grid-template-columns:repeat(2,1fr)!important;gap:10px!important}}
