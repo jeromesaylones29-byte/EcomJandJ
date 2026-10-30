@@ -1,16 +1,5 @@
 # J&J Computer Shop (Supabase edition)
 
-1. Create a project at supabase.com.
-2. SQL Editor: run `supabase/schema.sql`, then `supabase/seed.sql` (44 products).
-   Already set up before? Run `supabase/update_messages.sql` once so the Contact form can save messages.
-3. Authentication > Providers: keep Email enabled. For instant sign-in while testing, turn off "Confirm email".
-4. Project Settings > API: copy the Project URL and anon public key into `config.js`.
-5. Host the folder on any static host (Netlify, Vercel, GitHub Pages) or run `npx serve .` locally.
-
-Accounts, carts, orders, contact messages, order tracking and returns are stored in Supabase.
-Prices and stock are validated server-side in the `place_order` function. Manage products and
-view orders/messages in the Supabase Table Editor. Until config.js is filled in, the site shows
-the built-in catalog from ItemList.js and checkout is disabled.
 
 ## How the code fits together
 
